@@ -8,6 +8,10 @@ app = flask.Flask(__name__)
 
 @app.route("/")
 def index():
+    '''
+        docstring    
+    '''
+    
     version = flask.request.args.get("urllib_version")
     url = flask.request.args.get("url")
     return fetch_website(version, url)
@@ -15,15 +19,29 @@ def index():
         
 CONFIG = {"API_KEY": "771df488714111d39138eb60df756e6b"}
 class Person(object):
+    '''
+        docstring    
+    '''
+    
     def __init__(self, name):
         self.name = name
 
 
 def print_nametag(format_string, person):
+    '''
+        docstring    
+    '''
+    
+    
     print(format_string.format(person=person))
 
 
 def fetch_website(urllib_version, url):
+    '''
+        docstring    
+    '''
+    
+    
     # Import the requested version (2 or 3) of urllib
     exec(f"import urllib{urllib_version} as urllib", globals())
     # Fetch and print the requested URL
@@ -36,11 +54,19 @@ def fetch_website(urllib_version, url):
 
 
 def load_yaml(filename):
+    '''
+        docstring    
+    '''
+    
     stream = open(filename)
     deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
     return deserialized_data
     
 def authenticate(password):
+    '''
+        docstring    
+    '''
+    
     # Assert that the password is correct
     assert password == "Iloveyou", "Invalid password!"
     print("Successfully authenticated!")
